@@ -1,8 +1,8 @@
-@ExerciseLar.FoundationAPI_HostAddress = https://localhost:7066
+@ExerciseLar.FoundationAPI_HostAddress = https://localhost:7066/api
 @ExerciseLar.Token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImJyaWFuLm5peG9uQGNvbXBhbnkuY29tIiwibmJmIjoxNzYwNzM4MzYxLCJleHAiOjE3NjA3NDE5NjEsImlhdCI6MTc2MDczODM2MX0.tYoRIxrAur6bY7A6ixhOd5ARTRPv6mxv5-xvWe-e9lE
 
 ### Login
-POST {{ExerciseLar.FoundationAPI_HostAddress}}/api/auth/login
+POST {{ExerciseLar.FoundationAPI_HostAddress}}/auth/login
 Content-Type: application/json
 {
   "Username": "brian.nixon@company.com",
@@ -11,7 +11,7 @@ Content-Type: application/json
 
 ### Customer
 ### GET - Lista de clientes
-GET {{ExerciseLar.FoundationAPI_HostAddress}}/api/customers
+GET {{ExerciseLar.FoundationAPI_HostAddress}}/customers
 Content-Type: application/json
 Authorization: Bearer {{ExerciseLar.Token}}
 {
@@ -21,12 +21,12 @@ Authorization: Bearer {{ExerciseLar.Token}}
 }
 
 ### GET - Cliente por ID
-GET {{ExerciseLar.FoundationAPI_HostAddress}}/api/customers/124850908117
+GET {{ExerciseLar.FoundationAPI_HostAddress}}/customers/124850908117
 Accept: application/json
 Authorization: Bearer {{ExerciseLar.Token}}
 
 ### POST - Criar novo cliente
-POST {{ExerciseLar.FoundationAPI_HostAddress}}/api/customers
+POST {{ExerciseLar.FoundationAPI_HostAddress}}/customers
 Content-Type: application/json
 Authorization: Bearer {{ExerciseLar.Token}}
 {
@@ -39,7 +39,7 @@ Authorization: Bearer {{ExerciseLar.Token}}
 }
 
 ### PUT - Atualizar cliente existente
-PUT {{ExerciseLar.FoundationAPI_HostAddress}}/api/customers/124850908117
+PUT {{ExerciseLar.FoundationAPI_HostAddress}}/customers/124850908117
 Content-Type: application/json
 Authorization: Bearer {{ExerciseLar.Token}}
 {
@@ -52,12 +52,12 @@ Authorization: Bearer {{ExerciseLar.Token}}
 }
 
 ### DELETE - Remover cliente
-DELETE {{ExerciseLar.FoundationAPI_HostAddress}}/api/customers/124880159145
+DELETE {{ExerciseLar.FoundationAPI_HostAddress}}/customers/124880159145
 Authorization: Bearer {{ExerciseLar.Token}}
 
 ### CustomerPhone
 ### GET - Lista de telefones de cliente
-GET {{ExerciseLar.FoundationAPI_HostAddress}}/api/customers/124850908117/phones
+GET {{ExerciseLar.FoundationAPI_HostAddress}}/customers/124850908117/phones
 Content-Type: application/json
 Authorization: Bearer {{ExerciseLar.Token}}
 {
@@ -66,12 +66,12 @@ Authorization: Bearer {{ExerciseLar.Token}}
   "Query": ""
 }
 ### GET - Telefone do cliente por ID
-GET {{ExerciseLar.FoundationAPI_HostAddress}}/api/customers/124850908117/phones/124878480832
+GET {{ExerciseLar.FoundationAPI_HostAddress}}/customers/124850908117/phones/124878480832
 Accept: application/json
 Authorization: Bearer {{ExerciseLar.Token}}
 
 ### POST - Criar novo telefone do cliente
-POST {{ExerciseLar.FoundationAPI_HostAddress}}/api/customers/124850908117/phones
+POST {{ExerciseLar.FoundationAPI_HostAddress}}/customers/124850908117/phones
 Content-Type: application/json
 Authorization: Bearer {{ExerciseLar.Token}}
 {
@@ -80,7 +80,7 @@ Authorization: Bearer {{ExerciseLar.Token}}
 }
 
 ### PUT - Atualizar telefone existente do cliente
-PUT {{ExerciseLar.FoundationAPI_HostAddress}}/api/customers/124850908117/phones/124878480832
+PUT {{ExerciseLar.FoundationAPI_HostAddress}}/customers/124850908117/phones/124878480832
 Content-Type: application/json
 Authorization: Bearer {{ExerciseLar.Token}}
 {
@@ -89,5 +89,5 @@ Authorization: Bearer {{ExerciseLar.Token}}
 }
 
 ### DELETE - Remover telefone do cliente
-DELETE {{ExerciseLar.FoundationAPI_HostAddress}}/api/customers/124850908117/phones/125048594169
+DELETE {{ExerciseLar.FoundationAPI_HostAddress}}/customers/124850908117/phones/125048594169
 Authorization: Bearer {{ExerciseLar.Token}}
