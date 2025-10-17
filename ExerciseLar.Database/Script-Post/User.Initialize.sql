@@ -1,0 +1,11 @@
+﻿PRINT 'Initializing User...'
+
+DECLARE @Email VARCHAR(150) = 'brian.nixon@company.com'
+
+IF NOT EXISTS(SELECT TOP 1 1 FROM [Universal].[User] WHERE [Email] = @Email)
+	BEGIN
+		INSERT INTO [Universal].[User] ([UserID], [Email], [Password])
+		VALUES (20251010, @Email, '934775754E6BB15C4486AF0C427709955FB92A262C3D147215F99DF1162FABEE-CF6D24DF865453D4ADA8F2E78F34891A')
+	END
+
+PRINT 'User loaded.'

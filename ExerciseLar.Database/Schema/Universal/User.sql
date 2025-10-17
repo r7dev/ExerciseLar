@@ -1,0 +1,6 @@
+﻿CREATE TABLE [Universal].[User]
+(
+	[UserID] BIGINT NOT NULL PRIMARY KEY,
+	[Email] NVARCHAR(200) NOT NULL,
+	[Password] NVARCHAR(200) NOT NULL,
+)

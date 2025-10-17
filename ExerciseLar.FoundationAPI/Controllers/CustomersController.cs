@@ -2,6 +2,7 @@
 using ExerciseLar.FoundationAPI.Services;
 using ExerciseLar.Infrastructure.Common;
 using ExerciseLar.Infrastructure.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExerciseLar.FoundationAPI.Controllers
@@ -12,6 +13,7 @@ namespace ExerciseLar.FoundationAPI.Controllers
 	{
 		private readonly ICustomerService _customerService = customerService;
 
+		[Authorize]
 		[HttpGet()]
 		public async Task<ActionResult<List<CustomerResponse>>> GetCustomersAsync(DefaultRequest request, CancellationToken cancellationToken)
 		{
@@ -32,6 +34,7 @@ namespace ExerciseLar.FoundationAPI.Controllers
 			return Ok(response);
 		}
 
+		[Authorize]
 		[HttpGet("{id:long}")]
 		public async Task<ActionResult<CustomerDetailsResponse>> GetCustomerByIdAsync(long id, CancellationToken cancellationToken)
 		{
@@ -41,6 +44,7 @@ namespace ExerciseLar.FoundationAPI.Controllers
 			return Ok(CreateCustomerDetailsResponse(customer));
 		}
 
+		[Authorize]
 		[HttpPost()]
 		public async Task<ActionResult<CustomerDetailsResponse>> CreateCustomerAsync([FromBody] CustomerDto model, CancellationToken cancellationToken)
 		{
@@ -61,6 +65,7 @@ namespace ExerciseLar.FoundationAPI.Controllers
 			}
 		}
 
+		[Authorize]
 		[HttpPut("{id:long}")]
 		public async Task<ActionResult<CustomerDetailsResponse>> UpdateCustomerAsync(long id, [FromBody] CustomerDto model, CancellationToken cancellationToken)
 		{
@@ -84,6 +89,7 @@ namespace ExerciseLar.FoundationAPI.Controllers
 			}
 		}
 
+		[Authorize]
 		[HttpDelete("{id:long}")]
 		public async Task<IActionResult> DeleteCustomerAsync(long id, CancellationToken cancellationToken)
 		{

@@ -10,9 +10,11 @@ namespace ExerciseLar.FoundationAPI.Extensions
 		{
 			services.AddSingleton<ISettingsService, SettingsService>();
 
+			services.AddScoped<IAuthService, AuthService>();
 			services.AddScoped<IDataServiceFactory, DataServiceFactory>();
 			services.AddScoped<ICustomerService, CustomerService>();
 			services.AddScoped<ICustomerPhoneService, CustomerPhoneService>();
+			services.AddScoped<ISecurityService, SecurityService>();
 
 			return services;
 		}

@@ -5,6 +5,10 @@ namespace ExerciseLar.Infrastructure.DataServices
 {
 	public interface IDataService : IDisposable
 	{
+		#region Schema Universal
+		Task<User?> GetUserByEmailAsync(string email, CancellationToken cancellationToken);
+		#endregion
+
 		#region Schema Loan
 		Task<Customer?> GetCustomerAsync(long id, CancellationToken cancellationToken);
 		Task<IList<Customer>> GetCustomersAsync(int skip, int take, DataRequest<Customer> request, CancellationToken cancellationToken);

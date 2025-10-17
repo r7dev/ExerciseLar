@@ -59,16 +59,23 @@
     <Folder Include="Schema" />
     <Folder Include="Schema\Loan" />
     <Folder Include="Script-Pre" />
+    <Folder Include="Schema\Universal" />
+    <Folder Include="Script-Post" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\Schemas.sql" />
     <Build Include="Schema\Loan\Customer.sql" />
     <Build Include="Schema\Loan\CustomerPhone.sql" />
+    <Build Include="Schema\Universal\User.sql" />
   </ItemGroup>
   <ItemGroup>
     <PreDeploy Include="Script-Pre\PreDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Script-Pre\DataBaseUsersAdd.sql" />
+    <None Include="Script-Post\User.Initialize.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script-Post\PostDeployment.sql" />
   </ItemGroup>
 </Project>

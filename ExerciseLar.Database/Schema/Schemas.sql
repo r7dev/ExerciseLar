@@ -1,2 +1,3 @@
 ﻿CREATE SCHEMA [Loan]
 GO
+CREATE SCHEMA [Universal]

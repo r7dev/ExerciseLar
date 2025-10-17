@@ -3,7 +3,7 @@
 namespace ExerciseLar.Infrastructure.DataServices
 {
 	public partial class SQLServerDataService(string connectionString)
-		: DataServiceBase(new SQLServerDbLoan(connectionString))
+		: DataServiceBase(new SQLServerDbUniversal(connectionString), new SQLServerDbLoan(connectionString))
 	{
 	}
 }

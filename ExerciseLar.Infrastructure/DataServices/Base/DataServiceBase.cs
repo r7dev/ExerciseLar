@@ -2,8 +2,10 @@
 
 namespace ExerciseLar.Infrastructure.DataServices
 {
-	public abstract partial class DataServiceBase(ILoanDataSource loanDataSource) : IDataService, IDisposable
+	public abstract partial class DataServiceBase(IUniversalDataSource universalDataSource,
+		ILoanDataSource loanDataSource) : IDataService, IDisposable
 	{
+		private readonly IUniversalDataSource _universalDataSource = universalDataSource;
 		private readonly ILoanDataSource _loanDataSource = loanDataSource;
 
 		#region Dispose
