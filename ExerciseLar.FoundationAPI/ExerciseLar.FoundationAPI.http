@@ -1,0 +1,78 @@
+@ExerciseLar.FoundationAPI_HostAddress = http://localhost:5228
+
+### Customer
+### GET - Lista de clientes
+GET {{ExerciseLar.FoundationAPI_HostAddress}}/api/customers
+Content-Type: application/json
+{
+  "Skip": 0,
+  "Take": 10,
+  "Query": ""
+}
+
+### GET - Cliente por ID
+GET {{ExerciseLar.FoundationAPI_HostAddress}}/api/customers/124850908117
+Accept: application/json
+
+### POST - Criar novo cliente
+POST {{ExerciseLar.FoundationAPI_HostAddress}}/api/customers
+Content-Type: application/json
+
+{
+  "FirstName": "Helena",
+  "MiddleName": "Vieira",
+  "LastName": "Machado",
+  "DocumentNumber": "12345678900",
+  "DateOfBirth": "2018-10-06T00:00:00Z",
+  "IsActive": true
+}
+
+### PUT - Atualizar cliente existente
+PUT {{ExerciseLar.FoundationAPI_HostAddress}}/api/customers/124850908117
+Content-Type: application/json
+
+{
+  "FirstName": "Ricardo",
+  "MiddleName": "Franco",
+  "LastName": "Machado",
+  "DocumentNumber": "01343523192",
+  "DateOfBirth": "1986-07-19T00:00:00Z",
+  "IsActive": true
+}
+
+### DELETE - Remover cliente
+DELETE {{ExerciseLar.FoundationAPI_HostAddress}}/api/customers/124869262654
+
+### CustomerPhone
+### GET - Lista de telefones de cliente
+GET {{ExerciseLar.FoundationAPI_HostAddress}}/api/customers/124850908117/phones
+Content-Type: application/json
+{
+  "Skip": 0,
+  "Take": 10,
+  "Query": ""
+}
+### GET - Telefone do cliente por ID
+GET {{ExerciseLar.FoundationAPI_HostAddress}}/api/customers/124850908117/phones/124878480832
+Accept: application/json
+
+### POST - Criar novo telefone do cliente
+POST {{ExerciseLar.FoundationAPI_HostAddress}}/api/customers/124850908117/phones
+Content-Type: application/json
+
+{
+  "Type": 0,
+  "Number": "(00)12345-6789"
+}
+
+### PUT - Atualizar telefone existente do cliente
+PUT {{ExerciseLar.FoundationAPI_HostAddress}}/api/customers/124850908117/phones/124878480832
+Content-Type: application/json
+
+{
+  "Type": 1,
+  "Number": "(65)99963-3454"
+}
+
+### DELETE - Remover telefone do cliente
+DELETE {{ExerciseLar.FoundationAPI_HostAddress}}/api/customers/124850908117/phones/124880106551
