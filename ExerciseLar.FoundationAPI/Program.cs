@@ -1,3 +1,4 @@
+using ExerciseLar.FoundationAPI.Configuration;
 using ExerciseLar.FoundationAPI.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,8 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+// Register the AppSettings configuration
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 // Register custom services
 builder.Services.Configure();
 
