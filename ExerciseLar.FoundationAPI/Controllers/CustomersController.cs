@@ -15,7 +15,7 @@ namespace ExerciseLar.FoundationAPI.Controllers
 
 		[Authorize]
 		[HttpGet()]
-		public async Task<ActionResult<List<CustomerResponse>>> GetCustomersAsync(DefaultRequest request, CancellationToken cancellationToken)
+		public async Task<ActionResult<List<CustomerResponse>>> GetCustomersAsync([FromQuery] DefaultRequest request, CancellationToken cancellationToken)
 		{
 			var dataRequest = new DataRequest<Customer>()
 			{
